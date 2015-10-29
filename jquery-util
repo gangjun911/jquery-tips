@@ -1,0 +1,28 @@
+/**
+*点击按钮，使用动画控制返回顶部执行需要时间
+*/
+<!--html tag-->
+<a class="top" href="#">Back to top</a>
+
+$('a.top').click(function(){
+  $(document.body).animate({scrollTop: 0}, 800);
+  return false;
+});
+
+/**
+*预加载图片(hover显示等)
+*/
+$.preloadImages = function(){
+  for (var i = 0; i < arguments.length; i++){
+    $('<img>').attr('src', arguments[i]);
+  }
+};
+
+$.preloadImages('img/hover1.png', 'img/hover2.png');
+
+/**
+*检查图片是否加载完成
+*/
+$('img').load(function(){
+  console.log('images load successful');
+});
